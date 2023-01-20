@@ -1,0 +1,52 @@
+<div class="container">
+    
+  <form nz-form [formGroup]="loginForm" class="login-form" (ngSubmit)="register()">
+      <h3>REGISTER</h3>
+
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Name is missing">
+          <nz-input-group nzPrefixIcon="user">
+            <input nz-input type="text" placeholder="Name" [formControl]="name" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Email is bad!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="text" nz-input formControlName="email" placeholder="Email" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Password min.lengh is 8!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Type age between 10 and 99">
+          <nz-input-group nzPrefixIcon="age">
+            <input nz-input type="number" placeholder="Age" formControlName="age" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Phone number should have exactly 10 digits">
+          <nz-input-group nzPrefixIcon="lock">
+            <input nz-input type="tel" placeholder="Phone number" formControlName="tel" pattern="[0-9]{10}"/>
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <br>
+      <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">R E G I S T E R !</button>
+      <p *ngIf="showError" nz-typography nzType="danger">You FAILED registration!</p>
+
+    </form>
+    
+</div>
